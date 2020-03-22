@@ -6,6 +6,7 @@ app.get("/api/MOVIE", (req, res) => {
   // connection to the database, and selection of movie
   connection.query("SELECT * FROM MOVIE", (err, results) => {
     if (err) {
+      
       //  If an error has occurred, then the user is informed of the error
       res.status(500).send("Error retrieving all movies");
     } else {
