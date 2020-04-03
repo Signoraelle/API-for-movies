@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const connection = require("./config");
 // listen to "/api/MOVIE"
-app.get("/api/MOVIE", (req, res) => {
+app.get("/api/movie", (req, res) => {
   // connection to the database, and selection of movie
   connection.query("SELECT * FROM MOVIE", (err, results) => {
     if (err) {
@@ -28,7 +28,7 @@ const express = require("express");
 const app = express();
 const connection = require("./config");
 
-app.get("/api/MOVIE", (req, res) => {
+app.get("/api/movie/name", (req, res) => {
   connection.query("SELECT name FROM MOVIE", (err, results) => {
     if (err) {
       res.status(500).send("Error retrieving names from movies");
